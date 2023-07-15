@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusriteRemoteControl", "FocusriteRemoteControl\FocusriteRemoteControl.csproj", "{32A1B27D-A867-4898-B910-B8BC1F0878D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusriteRemoteProtocol", "FocusriteRemoteProtocol\FocusriteRemoteProtocol.csproj", "{0D67E93E-998F-44F9-86F5-E9CB6DB7346B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusriteRemote", "FocusriteRemote\FocusriteRemote.csproj", "{42013A33-85E3-48BB-95C3-A207A8F8B21E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32A1B27D-A867-4898-B910-B8BC1F0878D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A1B27D-A867-4898-B910-B8BC1F0878D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A1B27D-A867-4898-B910-B8BC1F0878D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A1B27D-A867-4898-B910-B8BC1F0878D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D67E93E-998F-44F9-86F5-E9CB6DB7346B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D67E93E-998F-44F9-86F5-E9CB6DB7346B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D67E93E-998F-44F9-86F5-E9CB6DB7346B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D67E93E-998F-44F9-86F5-E9CB6DB7346B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42013A33-85E3-48BB-95C3-A207A8F8B21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42013A33-85E3-48BB-95C3-A207A8F8B21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42013A33-85E3-48BB-95C3-A207A8F8B21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42013A33-85E3-48BB-95C3-A207A8F8B21E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
