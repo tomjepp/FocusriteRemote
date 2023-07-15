@@ -14,11 +14,13 @@ public class Connection
     /// <summary>
     /// This is set by the remote end.
     /// </summary>
-    private string _clientId;
+    private string? _clientId;
 
     private Dictionary<string, Device> _devices;
 
     private bool _authorised = false;
+
+    public event EventHandler<Device> OnNewDevice;
 
     public Connection(SaffireControlEndpoint saffireControlEndpoint, string clientHostname, string clientKey)
     {
@@ -76,6 +78,11 @@ public class Connection
                     else
                     {
                         _devices.Add(device.ID, device);
+                    }
+
+                    if (OnNewDevice != null)
+                    {
+                        OnNewDevice(this, device);
                     }
 
                     var deviceSubscribeMessage = new Message()

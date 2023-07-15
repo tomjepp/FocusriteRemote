@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="140"
+        x:Class="FocusriteRemote.FirstStartWindow"
+        Title="FirstStartWindow"
+		Width="600"
+		Height="140"
+		CanResize="False"
+		>
+	<Grid Margin="5" Width="600"
+		  ColumnDefinitions="200, *"
+		  RowDefinitions="Auto, Auto, *">
+		<Label Grid.Row="0" Grid.Column="0" Margin="5">This remote control's name:</Label>
+		<TextBox Name="ThisDeviceName" Grid.Row="0" Grid.Column="1" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+		<Label Grid.Row="1" Grid.Column="0" Margin="5">Your target device:</Label>
+		<ComboBox Name="SelectedDevice" Grid.Row="1" Grid.Column="1" Margin="5" HorizontalAlignment="Stretch"></ComboBox>
+		<Button Name="OKButton" Margin="5" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">OK</Button>
+	</Grid>
+  
+</Window>

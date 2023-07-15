@@ -1,3 +1,4 @@
+using FocusriteRemoteProtocol.DeviceItems;
 using System.Xml.Linq;
 
 namespace FocusriteRemoteProtocol;
@@ -64,6 +65,8 @@ public class Device
         }
     }
 
+    public event EventHandler OnUpdate;
+
     public Device(XElement xml)
     {
         _xml = xml;
@@ -107,21 +110,42 @@ public class Device
 
             targetElement.Value = newValue;
         }
+
+        if (OnUpdate != null)
+        {
+            OnUpdate(this, new EventArgs());
+        }
     }
 
-    public void GetOutputs()
+    private IOutput[]? _outputs;
+
+    public IOutput[] GetOutputs()
     {
-        foreach (var element in _xml.Element("outputs").Elements())
+        if (_outputs != null)
         {
-            switch (element.Name.LocalName)
+            return _outputs;
+        }
+
+        var outputs = new List<IOutput>();
+
+        var xmlOutputs = _xml.Element("outputs").Elements();
+        for (int i = 0; i < xmlOutputs.Count(); i++)
+        {
+            var element = xmlOutputs.ElementAt(i);
+
+            bool isStereo = element.Element("stereo")?.Value == "true";
+            if (isStereo)
             {
-                case "analogue":
-                    break;
-                case "spdif-rca":
-                    break;
-                case "loopback":
-                    break;
+                outputs.Add(new StereoOutput(element, xmlOutputs.ElementAt(i + 1)));
+                i++;
+            }
+            else
+            {
+                outputs.Add(new MonoOutput(element));
             }
         }
+
+        _outputs = outputs.ToArray();
+        return _outputs;
     }
 }
